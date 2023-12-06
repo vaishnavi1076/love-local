@@ -1,0 +1,14 @@
+You are given a string s. You can convert s to a palindrome by adding characters in front of it.
+Return the shortest palindrome you can find by performing this transformation.
+  
+  code:
+  def shortest_palindrome(s):
+    rev_s = s[::-1]
+    for i in range(len(s) + 1):
+        if s.startswith(rev_s[i:]):
+            return rev_s[:i] + s
+
+if _name_ == "_main_":
+  s = "aacecaaa"
+  result = shortest_palindrome(s)
+  print(result)
