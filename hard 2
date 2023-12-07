@@ -12,3 +12,27 @@ if _name_ == "_main_":
   s = "aacecaaa"
   result = shortest_palindrome(s)
   print(result)
+
+Logic:
+Find the longest palindrome that starts from the beginning of the string s.
+Append the reversed substring (excluding the palindrome part) to the front of the string.
+
+Algorithm:
+1. Function shortest_palindrome(s):
+2.     Find the longest palindrome starting from the beginning of s.
+3.     Append the reversed substring (excluding the palindrome part) to the front of s.
+4.     Return the resulting string.
+
+1. Function find_longest_prefix_palindrome(s):
+2.     Initialize a variable max_len to 0.
+3.     Iterate i from 0 to the length of s - 1:
+4.         If s[0:i+1] is a palindrome:
+5.             Update max_len to i + 1.
+6.     Return the longest palindrome substring s[0:max_len].
+
+1. Function is_palindrome(substring):
+2.     Initialize pointers i and j to the start and end of the substring.
+3.     While i < j:
+4.         If substring[i] is not equal to substring[j], return False.
+5.         Increment i and decrement j.
+6.     Return True.
