@@ -27,3 +27,22 @@ if _name_ == "_main_":
   q = 8
   lca = lowestCommonAncestor(root, p, q)
   print("Lowest Common Ancestor:", lca)
+
+
+Logic:
+Start from the root of the BST.
+Traverse the tree from the root downwards.
+If the values of both nodes are less than the current node's value, then the LCA must be in the left subtree.
+If the values of both nodes are greater than the current node's value, then the LCA must be in the right subtree.
+If the values are on either side of the current node's value, then the current node is the LCA.
+
+Algorithm:
+1. Function find_LCA(root, node1, node2):
+2.     If root is None, return None.
+3.     If both node1 and node2 values are less than the current root's value:
+4.         Return find_LCA(root.left, node1, node2).
+5.     If both node1 and node2 values are greater than the current root's value:
+6.         Return find_LCA(root.right, node1, node2).
+7.     Otherwise, return the current root as the LCA.
+
+
