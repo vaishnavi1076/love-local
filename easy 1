@@ -12,3 +12,18 @@ if _name_ == "_main_':
   string = "Hello World"
   result = len_of_lastword(string)
   print(result)
+
+Logic:
+Trim any leading or trailing spaces from the input string to handle cases where there might be spaces at the beginning or end of the string.
+Split the string into words using a space as a delimiter.
+Check if there are any words in the resulting list.
+If there are words, return the length of the last word. Otherwise, return 0
+
+Algorithm:
+1. Function length_of_last_word(s):
+2.     Trim leading and trailing spaces from s.
+3.     Split s into words using space as a delimiter.
+4.     If the list of words is not empty:
+5.         Return the length of the last word in the list.
+6.     Else:
+7.         Return 0.
