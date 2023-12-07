@@ -20,3 +20,24 @@ def generate_pascals_triangle(numRows):
 numRows = 5
 output = generate_pascals_triangle(numRows)
 print(output)
+
+Logic:
+Initialize an empty list to store the rows of Pascal's Triangle.
+Iterate through each row from 0 to numRows - 1.
+For each row, initialize a list to store the values in that row.
+For the first and last element of each row, set the value to 1 (since there is no number above to add).
+For the elements in between, set the value to the sum of the two numbers directly above from the previous row.
+Append the row to the result list.
+
+Algorithm:
+1. Function generate_pascals_triangle(numRows):
+2.     Initialize an empty list result to store the rows of Pascal's Triangle.
+3.     Loop i from 0 to numRows - 1:
+4.         Initialize a list row to store the values in the current row.
+5.         Loop j from 0 to i (inclusive):
+6.             If j is 0 or j is i, set row[j] to 1.
+7.             Otherwise, set row[j] to result[i-1][j-1] + result[i-1][j].
+8.         Append the row to the result list.
+9.     Return the result list.
+
+
