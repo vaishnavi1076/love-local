@@ -38,3 +38,33 @@ if _name_ == "_main_":
   nums = [3,2,3]
   result = majority_elements(nums)
   print(result)
+
+
+Logic:
+Initialize two variables candidate1 and candidate2 to None and their corresponding counters count1 and count2 to 0.
+Iterate through the array and apply the majority vote algorithm with two candidates.
+In the first pass, find the two candidates that could potentially be the majority elements.
+In the second pass, verify if the candidates actually appear more than ⌊ n/3 ⌋ times.
+Return the verified candidates.
+
+
+Algorithm:
+1. Function majority_elements(nums):
+2.     Initialize candidate1, candidate2, count1, and count2 to None and 0.
+3.     First pass:
+4.         Iterate through the array nums:
+5.             If count1 is 0, set candidate1 to the current element.
+6.             If count2 is 0, set candidate2 to the current element.
+7.             If the current element is equal to candidate1, increment count1; otherwise, decrement count1.
+8.             If the current element is equal to candidate2, increment count2; otherwise, decrement count2.
+9.     Second pass:
+10.        Reset count1 and count2 to 0.
+11.        Iterate through the array nums:
+12.            If the current element is equal to candidate1, increment count1.
+13.            If the current element is equal to candidate2, increment count2.
+14.     Verify candidates:
+15.        Initialize a list result to store the verified candidates.
+16.        If count1 is greater than ⌊ n/3 ⌋, append candidate1 to result.
+17.        If count2 is greater than ⌊ n/3 ⌋ and candidate2 is not equal to candidate1, append candidate2 to result.
+18.     Return the result list.
+
